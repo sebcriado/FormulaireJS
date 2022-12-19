@@ -1,0 +1,10 @@
+le client a créer un formulaire pour enregistrer des personne sur son site web , mais il n'a pas de restriction
+voici ce qu'il aimerais:
+​
+-dans le champ nom il aimerait qu'on demande a l'utilisateur de rentrer la premiere lettre de son nom en majuscule , s'il ne le fait pas faudra l'avertir
+​
+-dans le champs mot de passe , il faudra au minimum 8 caractère, une majuscule, et un chiffre , sinon il faudra l'avertire
+​
+-dans le champs adresse email il faut verifier si l'adresse email a 1 "@" et un "." , s'il en a pas il faudra l'avertir
+​
+Si tout les champs son bon le client aimerai que vous afficher le message 'Bienvenue l'artiste'

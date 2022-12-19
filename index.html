@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+          <form class="register-form">
+            
+            
+            
+            <input class="name" type="text" placeholder="name"/>
+            <div class="error-name"></div>
+            <input class="password" type="password" placeholder="password"/>
+            <div class="error-password"></div>
+            <input class="email" type="text" placeholder="email address"/>
+            <div class="error-mail"></div>
+            <button class="btn">create</button>
+            <p class="message">Already registered? <a href="#">Sign In</a></p>
+          </form>
+          <form class="login-form">
+            <input type="text" placeholder="username"/>
+            <input type="password" placeholder="password"/>
+            <button>login</button>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+          </form>
+        </div>
+      </div>
+    <div class="frame">
+      <div class="valid hidden-text">Bienvenue l'artiste !</div>
+    </div>
+
+      <script>
+
+        const form = document.querySelector('.form');
+        const nameInput = document.querySelector('.name');
+        const passwordInput = document.querySelector('.password');
+        const emailInput = document.querySelector('.email');
+        const submit = document.querySelector('.btn');
+        const valid = document.querySelector('.valid');
+        const errorName = document.querySelector('.error-name');
+        const errorPswrd = document.querySelector('.error-password');
+        const errorMail = document.querySelector('.error-mail');
+
+        
+
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          
+        const name = nameInput.value;
+        const firstLetter = /^[A-Z]/.test(name);
+        
+
+        const password = passwordInput.value;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+        const isPasswordValid = password.length >= 8 && hasUpperCase && hasNumber;
+        
+        
+
+        const email = emailInput.value;
+        const arobase = email.includes('@');
+        const point = email.includes('.');
+        const isEmailValid = arobase && point;
+          console.log();
+        if (firstLetter) {
+          errorName.innerHTML = "";
+            if (isPasswordValid) {
+              errorPswrd.innerHTML = "";
+              if (isEmailValid) {
+                errorMail.innerHTML = "";
+                valid.classList.remove('hidden-text');
+              } else {
+                errorMail.innerHTML = "Votre mail doit contenir les caractères '@' et '.'";
+              }
+            } else {
+              errorPswrd.innerHTML = "Votre mot de passe doit contenir 8 caractères, une majuscule et un chiffre";
+            } 
+          }  else {
+            errorName.innerHTML = "Veuillez entrer la première lettre de votre nom en majuscule.";
+            }
+          }
+        )
+        
+     
+      
+
+      
+
+
+
+      </script>
+</body>
+</html>
